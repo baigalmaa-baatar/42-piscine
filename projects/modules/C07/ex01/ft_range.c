@@ -1,7 +1,18 @@
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/16 14:34:23 by bbaatar           #+#    #+#             */
+/*   Updated: 2021/02/16 14:35:23 by bbaatar          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int *ft_range(int min, int max)
+#include <stdlib.h>
+
+int	*ft_range(int min, int max)
 {
 	int i;
 	int j;
@@ -9,16 +20,16 @@ int *ft_range(int min, int max)
 	int number_of_elements;
 
 	if (max <= min)
-		return 0;
+		return (0);
 	number_of_elements = max - min;
-	tab = malloc((number_of_elements)*sizeof(int));
+	tab = malloc((number_of_elements) * sizeof(int));
 	i = min;
 	j = 0;
-	while(i < max)
+	while (i < max)
 	{
 		tab[j] = i;
 		i++;
 		j++;
 	}
-	return(tab);
+	return (tab);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_board.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acerdan <marvin@42.fr>                       +#+  +:+       +#+      */
+/*   By: etran <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/14 12:32:28 by acerdan             #+#    #+#           */
-/*   Updated: 2021/02/14 12:32:49 by bbaatar            ###   ########.fr     */
+/*   Created: 2021/02/14 12:32:28 by etran             #+#    #+#             */
+/*   Updated: 2021/07/06 15:50:04 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ft_putchar(char ch)
 
 void	ft_print_board(int board[4][4])
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < 4)

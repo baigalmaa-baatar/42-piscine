@@ -6,7 +6,7 @@
 /*   By: engo <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 17:08:10 by engo              #+#    #+#             */
-/*   Updated: 2021/02/21 17:08:22 by engo             ###   ########.fr       */
+/*   Updated: 2021/07/06 16:17:58 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int		ft_file_size(char *filename)
+int	ft_file_size(char *filename)
 {
 	int		size;
 	int		fd;

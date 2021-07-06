@@ -6,7 +6,7 @@
 /*   By: gnevoa-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 17:13:23 by gnevoa-p          #+#    #+#             */
-/*   Updated: 2021/02/21 17:13:25 by gnevoa-p         ###   ########.fr       */
+/*   Updated: 2021/07/06 16:19:06 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 t_string	ft_string_new(void)
 {
-	t_string str;
+	t_string	str;
 
 	str.size = 0;
 	str.capacity = 10;
@@ -25,12 +25,12 @@ t_string	ft_string_new(void)
 	return (str);
 }
 
-void		ft_string_delete(t_string *str)
+void	ft_string_delete(t_string *str)
 {
 	free(str->data);
 }
 
-void		ft_string_append_char(t_string *str, char ch)
+void	ft_string_append_char(t_string *str, char ch)
 {
 	char	*new_data;
 	int		i;
@@ -55,9 +55,9 @@ void		ft_string_append_char(t_string *str, char ch)
 	str->data[str->size] = '\0';
 }
 
-void		ft_string_append_str(t_string *str, char *chs)
+void	ft_string_append_str(t_string *str, char *chs)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (chs[i])
@@ -67,9 +67,9 @@ void		ft_string_append_str(t_string *str, char *chs)
 	}
 }
 
-int			ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (str[len])

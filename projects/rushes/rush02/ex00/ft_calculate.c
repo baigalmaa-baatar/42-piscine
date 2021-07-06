@@ -6,7 +6,7 @@
 /*   By: gnevoa-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 17:13:03 by gnevoa-p          #+#    #+#             */
-/*   Updated: 2021/02/21 17:13:05 by gnevoa-p         ###   ########.fr       */
+/*   Updated: 2021/07/06 16:31:52 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_complement(char *nbr)
 	return (complemented_nbr);
 }
 
-int		ft_calculate_2(t_string *str, char *nbr)
+int	ft_calculate_2(t_string *str, char *nbr)
 {
 	if (nbr[0] == '0' && nbr[1] == '0')
 		return (1);
@@ -50,15 +50,15 @@ int		ft_calculate_2(t_string *str, char *nbr)
 		ft_string_append_str(str, " ");
 	if (nbr[0] < '2')
 	{
-		if (!g_small_dict[(nbr[0] - '0') * 10 + (nbr[1] - '0')])
+		if (!g_small_dict[(nbr[0] - '0')*10 + (nbr[1] - '0')])
 			return (0);
 		ft_string_append_str(str,
-			g_small_dict[(nbr[0] - '0') * 10 + (nbr[1] - '0')]);
+			g_small_dict[(nbr[0] - '0')*10 + (nbr[1] - '0')]);
 		return (1);
 	}
-	if (!g_small_dict[(nbr[0] - '0') * 10])
+	if (!g_small_dict[(nbr[0] - '0')*10])
 		return (0);
-	ft_string_append_str(str, g_small_dict[(nbr[0] - '0') * 10]);
+	ft_string_append_str(str, g_small_dict[(nbr[0] - '0')*10]);
 	if (nbr[1] != '0')
 	{
 		ft_string_append_str(str, " ");
@@ -69,7 +69,7 @@ int		ft_calculate_2(t_string *str, char *nbr)
 	return (1);
 }
 
-int		ft_calculate_3(t_string *str, char *nbr)
+int	ft_calculate_3(t_string *str, char *nbr)
 {
 	if (nbr[0] == '0' && nbr[1] == '0' && nbr[2] == '0')
 		return (1);
@@ -90,7 +90,7 @@ int		ft_calculate_3(t_string *str, char *nbr)
 	return (1);
 }
 
-int		ft_calculate_batches(t_string *str, char *nbr)
+int	ft_calculate_batches(t_string *str, char *nbr)
 {
 	int		i;
 	int		batch_number;
@@ -102,15 +102,17 @@ int		ft_calculate_batches(t_string *str, char *nbr)
 		if (ft_calculate_3(str, &nbr[i * 3]) == 0)
 			return (0);
 		if (i != batch_number - 1)
-			if (nbr[i * 3] != '0' || nbr[i * 3 + 1] != '0' ||
-					nbr[i * 3 + 2] != '0')
+		{
+			if (nbr[i * 3] != '0' || nbr[i * 3 + 1] != '0' \
+					|| nbr[i * 3 + 2] != '0')
 			{
 				ft_string_append_str(str, " ");
-				if (11 < batch_number - i - 2 ||
-					!g_big_dict[batch_number - i - 2])
+				if (11 < batch_number - i - 2 \
+						|| !g_big_dict[batch_number - i - 2])
 					return (0);
 				ft_string_append_str(str, g_big_dict[batch_number - i - 2]);
 			}
+		}
 		i++;
 	}
 	return (1);

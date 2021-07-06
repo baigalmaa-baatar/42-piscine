@@ -6,7 +6,7 @@
 /*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 13:56:48 by bbaatar           #+#    #+#             */
-/*   Updated: 2021/02/14 14:04:09 by etran            ###   ########.fr       */
+/*   Updated: 2021/07/06 15:48:04 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ void	ft_print_board(int board[4][4]);
 
 void	ft_get_candidates(int board[4][4], int x, int y, int *candidates)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i <= 4)
@@ -34,7 +34,7 @@ void	ft_get_candidates(int board[4][4], int x, int y, int *candidates)
 	}
 }
 
-int		ft_verify_then_print_board(int board[4][4], int input[16])
+int	ft_verify_then_print_board(int board[4][4], int input[16])
 {
 	if (ft_verify(board, input) == 1)
 	{
@@ -44,7 +44,7 @@ int		ft_verify_then_print_board(int board[4][4], int input[16])
 	return (0);
 }
 
-int		ft_next_x(int x)
+int	ft_next_x(int x)
 {
 	if (x < 3)
 		return (x + 1);
@@ -52,7 +52,7 @@ int		ft_next_x(int x)
 		return (0);
 }
 
-int		ft_next_y(int x, int y)
+int	ft_next_y(int x, int y)
 {
 	if (x < 3)
 		return (y);
@@ -60,12 +60,12 @@ int		ft_next_y(int x, int y)
 		return (y + 1);
 }
 
-int		ft_generate_board(int board[4][4], int x, int y, int input[16])
+int	ft_generate_board(int board[4][4], int x, int y, int input[16])
 {
-	int candidates[5];
-	int i;
-	int next_x;
-	int next_y;
+	int	candidates[5];
+	int	i;
+	int	next_x;
+	int	next_y;
 
 	if (x == 0 && y == 4)
 		return (ft_verify_then_print_board(board, input));
@@ -75,7 +75,7 @@ int		ft_generate_board(int board[4][4], int x, int y, int input[16])
 	i = 1;
 	while (i <= 4)
 	{
-		if (candidates[i] != 0)
+		if (candidates[i])
 		{
 			board[y][x] = i;
 			if (ft_generate_board(board, next_x, next_y, input) == 1)

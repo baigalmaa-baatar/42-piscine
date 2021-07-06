@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_numbers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbaatar <marvin@42.fr>                       +#+  +:+       +#+      */
+/*   By: etran <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/14 12:33:17 by bbaatar             #+#    #+#           */
-/*   Updated: 2021/02/14 12:35:42 by bbaatar            ###   ########.fr     */
+/*   Created: 2021/02/14 12:33:17 by etran             #+#    #+#             */
+/*   Updated: 2021/07/06 15:48:38 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strlen(char *str)
 {
-	int counter_numbers;
+	int	counter_numbers;
 
 	counter_numbers = 0;
 	while (str[counter_numbers] != '\0')
@@ -26,7 +26,7 @@ int	ft_strlen(char *str)
 
 int	ft_get_numbers(char *str, int *tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (ft_strlen(str) != 31)

@@ -6,13 +6,13 @@
 /*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 15:55:38 by bbaatar           #+#    #+#             */
-/*   Updated: 2021/02/21 15:55:49 by bbaatar          ###   ########.fr       */
+/*   Updated: 2021/07/06 16:17:28 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_cleanup_dict(char **g_small_dict, char **g_big_dict)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i <= 101)
@@ -30,7 +30,7 @@ void	ft_cleanup_dict(char **g_small_dict, char **g_big_dict)
 
 char	*ft_get_value(char *line)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (line[i] != ':' && line[i] != '\0')
@@ -43,9 +43,9 @@ char	*ft_get_value(char *line)
 	return (&line[i]);
 }
 
-int		ft_is_small_number(char *line)
+int	ft_is_small_number(char *line)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while ('0' <= line[len] && line[len] <= '9')
@@ -59,10 +59,10 @@ int		ft_is_small_number(char *line)
 	return (-1);
 }
 
-int		ft_is_big_number(char *line)
+int	ft_is_big_number(char *line)
 {
-	int len;
-	int i;
+	int	len;
+	int	i;
 
 	len = 0;
 	while ('0' <= line[len] && line[len] <= '9')

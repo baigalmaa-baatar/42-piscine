@@ -6,13 +6,13 @@
 /*   By: etran <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 12:26:57 by etran             #+#    #+#             */
-/*   Updated: 2021/02/14 12:40:31 by etran            ###   ########.fr       */
+/*   Updated: 2021/07/06 15:49:33 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	top(int board[4][4], int x)
 {
-	int result;
+	int	result;
 
 	result = 1;
 	if (board[0][x] < board[1][x])
@@ -28,7 +28,7 @@ int	top(int board[4][4], int x)
 
 int	bottom(int board[4][4], int x)
 {
-	int result;
+	int	result;
 
 	result = 1;
 	if (board[3][x] < board[2][x])
@@ -44,7 +44,7 @@ int	bottom(int board[4][4], int x)
 
 int	left(int board[4][4], int y)
 {
-	int result;
+	int	result;
 
 	result = 1;
 	if (board[y][0] < board[y][1])
@@ -60,7 +60,7 @@ int	left(int board[4][4], int y)
 
 int	right(int board[4][4], int y)
 {
-	int result;
+	int	result;
 
 	result = 1;
 	if (board[y][3] < board[y][2])

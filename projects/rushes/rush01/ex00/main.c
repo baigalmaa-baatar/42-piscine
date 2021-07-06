@@ -6,7 +6,7 @@
 /*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 10:14:55 by bbaatar           #+#    #+#             */
-/*   Updated: 2021/02/14 14:04:34 by etran            ###   #######.fr        */
+/*   Updated: 2021/07/06 15:52:19 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int		ft_generate_board(int board[4][4], int x, int y, int input[16]);
 
 void	ft_initialize_board(int board[4][4])
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < 4)
@@ -33,10 +33,10 @@ void	ft_initialize_board(int board[4][4])
 	}
 }
 
-int		main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	int board[4][4];
-	int tab[16];
+	int	board[4][4];
+	int	tab[16];
 
 	if (argc != 2 || ft_get_numbers(argv[1], tab) == 0)
 	{

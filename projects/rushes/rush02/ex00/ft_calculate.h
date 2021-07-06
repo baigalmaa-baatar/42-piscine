@@ -6,13 +6,13 @@
 /*   By: gnevoa-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 17:13:12 by gnevoa-p          #+#    #+#             */
-/*   Updated: 2021/02/21 17:13:13 by gnevoa-p         ###   ########.fr       */
+/*   Updated: 2021/07/06 16:15:55 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_CALCULATE_H
 # define FT_CALCULATE_H
 
-char *ft_calculate(char *nbr);
+char	*ft_calculate(char *nbr);
 
 #endif

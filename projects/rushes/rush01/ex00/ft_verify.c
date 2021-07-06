@@ -6,18 +6,18 @@
 /*   By: etran <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 12:23:17 by etran             #+#    #+#             */
-/*   Updated: 2021/02/14 12:44:34 by etran            ###   ########.fr       */
+/*   Updated: 2021/07/06 15:51:32 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int top(int board[4][4], int x);
-int bottom(int board[4][4], int x);
-int left(int board[4][4], int y);
-int right(int board[4][4], int y);
+int	top(int board[4][4], int x);
+int	bottom(int board[4][4], int x);
+int	left(int board[4][4], int y);
+int	right(int board[4][4], int y);
 
 int	ft_verify_vertical(int board[4][4], int tab[16])
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 4)
@@ -37,7 +37,7 @@ int	ft_verify_vertical(int board[4][4], int tab[16])
 
 int	ft_verify_horizontal(int board[4][4], int tab[16])
 {
-	int i;
+	int	i;
 
 	i = 8;
 	while (i < 12)
@@ -57,8 +57,7 @@ int	ft_verify_horizontal(int board[4][4], int tab[16])
 
 int	ft_verify(int board[4][4], int tab[16])
 {
-	if (ft_verify_vertical(board, tab) &&
-		ft_verify_horizontal(board, tab))
+	if (ft_verify_vertical(board, tab) && ft_verify_horizontal(board, tab))
 		return (1);
 	return (0);
 }

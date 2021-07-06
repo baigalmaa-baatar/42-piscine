@@ -6,7 +6,7 @@
 /*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 15:56:26 by bbaatar           #+#    #+#             */
-/*   Updated: 2021/02/21 15:56:29 by bbaatar          ###   ########.fr       */
+/*   Updated: 2021/07/06 16:16:35 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 char	*g_small_dict[101];
 char	*g_big_dict[12];
 
-int		ft_load_line(char *line)
+int	ft_load_line(char *line)
 {
-	char *value;
+	char	*value;
 
 	value = ft_get_value(line);
 	if (value == 0)
