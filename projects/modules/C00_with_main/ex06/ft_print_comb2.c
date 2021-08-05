@@ -6,7 +6,7 @@
 /*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 16:11:31 by bbaatar           #+#    #+#             */
-/*   Updated: 2021/02/06 16:22:26 by bbaatar          ###   ########.fr       */
+/*   Updated: 2021/08/05 17:19:25 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	print2digits(int a, int b)
+void	print2digits(int first_number, int second_number)
 {
-	ft_putchar('0' + a / 10);
-	ft_putchar('0' + a % 10);
+	ft_putchar('0' + first_number / 10);
+	ft_putchar('0' + first_number % 10);
 	ft_putchar(' ');
-	ft_putchar('0' + b / 10);
-	ft_putchar('0' + b % 10);
-	if (a != 98)
+	ft_putchar('0' + second_number / 10);
+	ft_putchar('0' + second_number % 10);
+	if (first_number != 98)
 	{
 		ft_putchar(',');
 		ft_putchar(' ');
