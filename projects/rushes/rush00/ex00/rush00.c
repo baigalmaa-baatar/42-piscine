@@ -6,7 +6,7 @@
 /*   By: wmachrou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 14:34:36 by wmachrou          #+#    #+#             */
-/*   Updated: 2021/02/07 14:41:07 by wmachrou         ###   ########.fr       */
+/*   Updated: 2021/08/09 17:55:11 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ void	ft_putchar(char c);
 char	get_mark(int width, int height, int x, int y)
 {
 	if ((width == 0 && height == 0) || (width == 0 && height == y - 1)
-	|| (width == x - 1 && height == 0) || (width == x - 1 && height == y - 1))
+			|| (width == x - 1 && height == 0) || (width == x - 1 && height == y - 1))
 	{
 		return ('o');
 	}
@@ -35,16 +35,19 @@ void	rush00(int x, int y)
 	int width;
 	int height;
 
-	height = 0;
-	while (height < y)
+	if (x > 0 &&  y > 0) 
 	{
-		width = 0;
-		while (width < x)
+		height = 0;
+		while (height < y)
 		{
-			ft_putchar(get_mark(width, height, x, y));
-			width++;
+			width = 0;
+			while (width < x)
+			{
+				ft_putchar(get_mark(width, height, x, y));
+				width++;
+			}
+			ft_putchar('\n');
+			height++;
 		}
-		ft_putchar('\n');
-		height++;
 	}
 }

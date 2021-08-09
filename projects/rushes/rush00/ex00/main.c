@@ -6,14 +6,14 @@
 /*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 12:31:56 by bbaatar           #+#    #+#             */
-/*   Updated: 2021/02/07 14:58:23 by wmachrou         ###   ########.fr       */
+/*   Updated: 2021/08/09 17:56:35 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush03(int x, int y);
+void	rush00(int x, int y);
 
 int		main(void)
 {
-	rush03(10, 10);
+	rush00(10, 10);
 	return (0);
 }
