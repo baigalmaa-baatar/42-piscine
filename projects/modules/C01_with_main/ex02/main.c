@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void ft_swap(int *a, int *b);
+void ft_swap(int *num1, int *num2);
 
 int main(void)
 {
