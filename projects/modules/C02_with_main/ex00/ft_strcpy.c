@@ -1,18 +1,25 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/08 09:29:52 by bbaatar           #+#    #+#             */
+/*   Updated: 2021/02/08 09:54:14 by bbaatar          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
-  int i;
-  i = 0;
+	int i;
 
-  printf("ft dest : %p\n", &src);
-  printf("ft src : %p\n", &dest);
-
-  while(src[i] != '\0')
-  {
-    dest[i] = src[i];
-    i++;
-  }
-  dest[i] = '\0';
-  return(dest);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

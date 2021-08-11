@@ -4,15 +4,15 @@ char *ft_strcpy(char *dest, char *src);
 
 int main(void)
 {
-	char src_s[]	= "Source\n";
-	char dest_s[]	= "Destination\n";
+	char src[]	= "Source";
+	char dest[]	= "Destination";
 
-  printf("dest : %p\n", &src_s);
-  printf("src : %p\n", &dest_s);
+	printf("Dest before the copy : %s\n", dest);
+	printf("Src before the copy : %s\n\n", src);
 
-  ft_strcpy(dest_s, src_s);
+	ft_strcpy(dest, src);
 
-	printf(" %s ", dest_s);
+	printf("Dest after the copy :  %s\n", dest);
 
 	return (0);
 }
