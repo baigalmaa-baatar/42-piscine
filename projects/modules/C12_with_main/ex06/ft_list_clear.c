@@ -1,68 +1,65 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                               :+:      :+:    :+:   */
+/*   ft_list_clear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 14:35:11 by bbaatar           #+#    #+#             */
-/*   Updated: 2021/05/09 18:35:20 by bbaatar          ###   ########.fr       */
+/*   Created: 2021/10/05 13:50:46 by bbaatar           #+#    #+#             */
+/*   Updated: 2021/10/05 13:50:47 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
 #include "ft_list.h"
-#include <stdio.h>
 
-t_list	*ft_create_elem(void *data);
-
-void free_fct(void *data)
+t_list  *create_elem(int    data)
 {
-	printf("%s\n", (char *)data);
+    t_list  *elem;
+
+    if(!(elem = malloc(sizeof(t_list))))
+        return (0);
+    elem->data = data;
+    elem->next = NULL;
+
+    return (elem);
 }
 
-void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *))
+void ft_list_clear(t_list *begin_list)
+{   
+    t_list  *current;
+    t_list  *tmp;
+
+    current = begin_list;
+    while (current)
+    {
+        current->data = 0;
+        tmp = current;
+        current = current->next;
+        free(tmp);
+    }
+}   
+
+int main(void)
 {
-	t_list *current;
-	t_list *tmp;
-	
-	current = begin_list;
-	while(current)
-	{
-		free_fct(current->data);
-		tmp = current;
-		current = current->next;
-		free(tmp);
-	}
-}
+    t_list  *a;
+    t_list  *b;
+    int nbrs[4] = {12,34,56,78};
+    int i = 1;
 
-int	main(void)
-{
-	char	*data1 = "One";
-	char	*data2 = "two";
-	char	*data3 = "three";
-
-	t_list	*head = NULL;
-	t_list	*current = NULL;
-
-	head = ft_create_elem((void *)data1);
-	head->next = ft_create_elem((void *)data2);;
-	head->next->next = ft_create_elem((void *)data3);
-	head->next->next->next = NULL;
-
-	current = head;
-
-	while(current)
-	{	
-		printf("before freeing : %s\n", current->data);
-		current = current->next;
-	}
-	ft_list_clear(head, free_fct);
-	while(head)
-	{	
-		printf("after freeing : %s\n", head->data);
-		head = head->next;
-	}
-	return(0);
+    a = create_elem(nbrs[0]);
+    b = a;
+    printf("before freeing %d\n", b->data);
+    while (i < 4)
+    {
+        b->next = create_elem(nbrs[i]);
+        a = b->next;
+        printf("before freeing %d\n", b->data);
+        i++;
+    }
+    ft_list_clear(b);
+    while (a)
+    {
+        a = a->next;
+        printf("after freeing %d\n", a->data);
+    }
 }

@@ -1,62 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_front.c                               :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 14:35:11 by bbaatar           #+#    #+#             */
-/*   Updated: 2021/05/09 18:35:20 by bbaatar          ###   ########.fr       */
+/*   Created: 2021/09/30 16:35:25 by bbaatar           #+#    #+#             */
+/*   Updated: 2021/09/30 16:35:26 by bbaatar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <unistd.h>
+
 #include "ft_list.h"
 
-t_list	*ft_create_elem(void *data)
+t_list  *ft_create_elem(void *data)
 {
-	t_list *element;
+    t_list *stack_a;
 
-	if (!(element = (t_list *)malloc(sizeof(t_list))))
-		return(0);
-    element->data = data;
-    element->next = NULL;
-	
-	return(element);
+    if (!(stack_a = malloc(sizeof(t_list))))
+        return (0);
+    stack_a->data = data;
+    stack_a->next = NULL;
+
+    return (stack_a);
 }
 
-void	ft_list_push_front(t_list **begin_list, void *data)
+int ft_list_size(t_list *begin_list)
 {
-	t_list *elem;
+    int len;
+    t_list *tmp;
 
-	elem = ft_create_elem(data);
-	elem->next = *begin_list;
-	*begin_list = elem;
+    len = 0;
+    tmp = begin_list;
+    while (tmp)
+    {
+        len++;
+    }
+    return (len);
 }
-
-int	ft_list_size(t_list *begin_list)
-{
-	unsigned int len;
-	t_list *element;
-
-	element = begin_list;
-
-	len = 0;
-	while(element)
-		len++;
-	
-	return(len);
-}
-
-#include <stdio.h>
 
 int main(void)
 {
-	char *data = "One two three";
-	t_list *begin_list = NULL;
+    t_list *stack_a = NULL;
+    t_list *tmp;
 
-	ft_list_push_front(&begin_list, (void *)data);
-	printf("%d\n", ft_list_size(begin_list));
+    char    *data[3] = {"12", "45", "67"};
+    int i = 0;
+    tmp = stack_a;
+    while (i < 3)
+    {
+        stack_a = ft_create_elem((void *)data[i]);
+        printf("%s\n", (char *)stack_a->data);
+        i++;
+    }
+    printf("%d\n", ft_list_size(tmp));
 
-	return (0);
+    return (0);
 }

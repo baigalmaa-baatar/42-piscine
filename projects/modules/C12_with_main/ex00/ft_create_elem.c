@@ -1,39 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_create_elem.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: bbaatar <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 14:35:11 by bbaatar           #+#    #+#             */
-/*   Updated: 2021/05/09 18:03:19 by bbaatar          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 #include <stdlib.h>
-#include <unistd.h>
+#include <stdio.h>
 #include "ft_list.h"
 
-t_list	*ft_create_elem(void *data)
+t_list *ft_create_elem(void *data)
 {
-	t_list *element;
+    t_list  *stack_a;
 
-	if (!(element = (t_list *)malloc(sizeof(t_list))))
-		return(0);
-    element->data = data;
-    element->next = NULL;
-	
-	return(element);
+    if(!(stack_a = malloc(sizeof(t_list))))
+        return (0);
+    stack_a->data = data;
+    stack_a->next = 0;
+    return (stack_a);
 }
 
-#include <stdio.h>
-
-int		main(void)
+int main(void)
 {
-	char	*data = "One two three";
-	t_list	*list;
+    char    *data = "coucou";
 
-	list = ft_create_elem((void *)data);
-	printf("%s\n", list->data);
-
-	return(0);
+    printf("%s\n", (char *)ft_create_elem(data)->data);
+    return (0);
 }
